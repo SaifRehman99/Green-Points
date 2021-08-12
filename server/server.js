@@ -9,6 +9,8 @@ const connectDB = require('./config/db')
 
 // Importing Router Here
 const greenPointRoutes = require('./routes/greenPointRoutes');
+const userActivityRoutes = require('./routes/userActivityRoutes');
+
 
 
 // RUNNER PORT 
@@ -26,6 +28,7 @@ app.get("/", (req, res) => {
 
 // Init Routes Here
 app.use('/api', greenPointRoutes)
+app.use('/api', userActivityRoutes)
 
 
 

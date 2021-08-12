@@ -5,7 +5,7 @@ const GreenPoint = require("../models/greenPointModel");
 
 // @desc    Fetch Green Point
 // @route   GET /api/getPoints
-// @access  Private
+// @access  Public
 const getGreenPoints = asyncHandler(async (req, res) => {
   const greenPoints = await GreenPoint.find({}).lean();
 
@@ -19,7 +19,7 @@ const getGreenPoints = asyncHandler(async (req, res) => {
 
 // @desc    Add Green Point
 // @route   POST /api/addPoint
-// @access  Private
+// @access  Public
 const addGreenPoints = asyncHandler(async (req, res) => {
   const { name, address, containers } = req.body;
 
