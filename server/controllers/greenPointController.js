@@ -1,6 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const GreenPoint = require("../models/greenPointModel");
 
+
+
 // @desc    Fetch Green Point
 // @route   GET /api/getPoints
 // @access  Private
@@ -11,6 +13,9 @@ const getGreenPoints = asyncHandler(async (req, res) => {
     greenPoints,
   });
 });
+
+
+
 
 // @desc    Add Green Point
 // @route   POST /api/addPoint
@@ -26,8 +31,7 @@ const addGreenPoints = asyncHandler(async (req, res) => {
 
   const createdGreenPoint = await greenPoint.save();
 
-  res.json({
-    status: 200,
+  res.status(201).json({
     createdGreenPoint,
   });
 });

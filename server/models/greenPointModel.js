@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const greenPointSchema = new Schema(
   {
@@ -24,4 +24,4 @@ const greenPointSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("greenPoint", greenPointSchema);
+module.exports = model("greenPoint", greenPointSchema);
