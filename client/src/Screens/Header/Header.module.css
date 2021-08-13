@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px 15px 30px;
+  margin-bottom: 10px;
+}
+
+.flexChild {
+  display: flex;
+  align-items: center;
+}
+
+.leftHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paragraph {
+  margin-left: 45px;
+}
+
+.avatar {
+  background-color: #a0ecd0;
+  border-radius: 100%;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logoHeading {
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  margin-left: 13px;
+  font-size: 25px;
+}
+
+.avatarContainer {
+  margin-right: 15px;
+}
+
+span {
+  font-weight: 200;
+  float: right;
+}
