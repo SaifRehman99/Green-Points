@@ -215,10 +215,44 @@
   display: none;
 }
 
-.chakra-select__icon-wrapper.css-zj2dqk {
-  margin-top: 10px;
+select.chakra-select.css-173b75c {
+  height: 55px;
 }
 
-select.chakra-select.mt-25.css-173b75c {
+
+
+/* SELECT CONTAINER */
+
+.select__container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.chakra-select__wrapper.css-42b2qy {
+  width: 80vw;
+  margin-right: 20px;
+}
+
+.chakra-form-control.css-1kxonj9 {
+  width: 18vw;
+  margin-left: 15px;
+}
+
+
+input#amount {
   height: 55px;
+}
+
+button.chakra-button.css-f6n2t5 {
+  background: #00C48C;
+  width: 100%;
+  /* padding: 30px; */
+  height: 56px;
+  border-radius: 6px;
+}
+
+button.chakra-button.css-f6n2t5:hover{
+  background: #0c976f
 }

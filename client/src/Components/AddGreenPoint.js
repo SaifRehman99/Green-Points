@@ -1,5 +1,10 @@
 import React from "react";
 import SelectBox from "./SelectBox";
+import InputContainer from "./Input";
+import { Button } from "@chakra-ui/react"
+// import {BeatLoader} from '@chakra-ui/icons'
+
+
 
 const AddGreenPoint = () => {
   return (
@@ -67,12 +72,55 @@ const AddGreenPoint = () => {
           <div className="mt-30 greenpoint__card" style={{ height: "50vh" }}>
             <h5 className="mt-25">Containers</h5>
 
-            <SelectBox />
-            <SelectBox />
-            <SelectBox />
-            <SelectBox />
-            <SelectBox />
-            <SelectBox />
+            <div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+              <div className="select__container mt-25">
+                <SelectBox />
+                <InputContainer />
+              </div>
+
+            </div>
+
+            <div className="mt-25">
+
+            <Button colorScheme="teal" variant="solid">
+    Create Green Point
+  </Button>
+
+
+  {/* <Button
+  isLoading
+  colorScheme="blue"
+  spinner={<BeatLoader size={8} color="white" />}
+>
+  Click me
+</Button> */}
+            </div>
           </div>
         </div>
 
