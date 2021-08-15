@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Cards from './Cards'
 
 const GreenPoint = () => {
   return (
+    <div className="container">
     <div className="d-flex">
       <div className="greenPointContainer">
 
@@ -10,12 +12,15 @@ const GreenPoint = () => {
         {/* HEADER PART HERE */}
         <div className="greenPoint">
           <h1 className="greenPointHeading">Green Points</h1>
+
+          <Link to="/add-point">
           <button className="greenPointButton">
             <img
               src={`${process.env.PUBLIC_URL}/icons/bx-plus.svg`}
               alt="button_icon"
             />
           </button>
+          </Link>
         </div>
 
         {/* SEARCHING */}
@@ -30,7 +35,7 @@ const GreenPoint = () => {
                 name="search"
                 id="search"
               />
-              <label for="search" className="form__label">
+              <label htmlFor="search" className="form__label">
                 Search the Green Points.....
               </label>
             </div>
@@ -69,6 +74,7 @@ const GreenPoint = () => {
       </div>
 
       <div className="mapContainer">Map here</div>
+    </div>
     </div>
   );
 };

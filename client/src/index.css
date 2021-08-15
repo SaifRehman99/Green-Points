@@ -3,9 +3,14 @@
 :root {
   --primary: #11998e;
   --secondary: #38ef7d;
-  --white: #fff;
+  --white: #FFFFFF;
   --gray: #9b9b9b;
   --green: #448e9d;
+  --oceanGreen:#00C48C;
+  --red: #FF647C;
+  --grey: #EAEFF5;
+  --yellow: #FAC546;
+  --blue: #73E7ED;
 }
 
 * {
@@ -15,20 +20,55 @@
   box-sizing: border-box;
 }
 
+
 /* ========================================== UTILITY CLASSES HERE ========================================== */
 .d-flex {
   display: flex;
 }
 
+.d-flex__row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex__column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-xy1{
+  margin:9px 0px;
+}
+.m-xy{
+  margin: 0px 20px;
+}
+
 .mr-10 {
   margin-right: 10px;
 }
+
+.ml-25 {
+  margin-left: 25px;
+}
+
+.mb-10{
+  margin-bottom: 7px;
+}
+
 .ml-40 {
   margin-left: 40px;
 }
 
 .mr-15 {
   margin-right: 15px;
+}
+
+.ml-86{
+  margin-left: 76px;
+
 }
 
 .mr-20 {
@@ -42,10 +82,25 @@
 .green {
   color: var(--green);
 }
+.red{
+  color: var(--red);
+
+}
+
+.yellow{
+  color: var(--red);
+
+}
 
 .mt-2 {
   margin-top: 20px;
 }
+
+
+.mt-10 {
+  margin-top: 10px;
+}
+
 
 .mt-25 {
   margin-top: 25px;
@@ -57,6 +112,14 @@
 
 .mt-35 {
   margin-top: 35px;
+}
+
+.m-22{
+  margin: 0px 22px;
+}
+
+.m-25{
+margin: 20px 0px;
 }
 
 .h-4 {
@@ -85,8 +148,17 @@
   font-weight: 600;
 }
 
+.f-12 {
+  font-size: 14px;
+}
+
+
 .f-15 {
   font-size: 15px;
+}
+
+.cursor-p{
+  cursor: pointer;
 }
 
 .sidebar {
@@ -121,7 +193,7 @@
 }
 
 .greenPointButton {
-  background: #00c48c;
+  background: var(--oceanGreen);
   padding: 20px 26px;
   border-radius: 13px;
   color: white;
@@ -246,13 +318,157 @@ input#amount {
 }
 
 button.chakra-button.css-f6n2t5 {
-  background: #00C48C;
+  background: var(--oceanGreen);
   width: 100%;
-  /* padding: 30px; */
-  height: 56px;
+  height: 50px;
   border-radius: 6px;
 }
 
 button.chakra-button.css-f6n2t5:hover{
   background: #0c976f
+}
+
+
+
+.greenpoint__add{
+  color: var(--green);
+  float: right;
+  padding: 17px 0px;
+  font-size: 17px;
+}
+
+
+/* MODAL CONTAINER */
+
+.chakra-modal--header{
+  padding-bottom: 5px !important;
+
+}
+
+.chakra-modal--header::before {
+  content:url('https://svgshare.com/i/_CJ.svg');
+  background: var(--oceanGreen);
+  border-radius: 16px;
+  padding: 10px;
+  position:relative; 
+  z-index:100000; 
+  left:-10px;
+  top:13px;
+  margin-right: 10px;
+}
+
+
+button.chakra-modal__close-btn.css-b6acrs {
+  margin-top: 6px;
+}
+
+.modal--info{
+  border: 1px #EAEFF5 solid;
+  padding: 8.5px;
+  width: 31vw;
+}
+
+.modal__left{
+width: 40vw;
+margin-right: 10px;
+}
+
+
+.modal__right{
+  margin: 18px 0px 0px 10px;  
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 570px;
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+.modal__right::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.modal__icon{
+  border: 1px var(--red) solid;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.modal__icon-1{
+
+  border: 1px var(--yellow) solid;
+  border-left: 1px var(--grey) solid;
+  border-bottom: 1px var(--grey) solid;
+  border-top: 1px var(--grey) solid;
+  border-radius: 100%;
+  padding: 10px;
+
+}
+
+.modal__icon-2{
+
+  border: 1px var(--oceanGreen) solid;
+  border-left: 1px var(--grey) solid;
+  border-bottom: 1px var(--grey) solid;
+  /* border-top: 1px var(--grey) solid; */
+  border-radius: 100%;
+  padding: 10px;
+
+}
+
+.modal__icon > img {
+  height: 25px;
+  width: 25px;
+  max-width: 100px;
+}
+
+
+.modal__icon-1 > img{
+  height: 25px;
+  width: 25px;
+  max-width: 100px;
+
+}
+
+.modal__icon-2 > img{
+  height: 25px;
+  width: 25px;
+  max-width: 100px;
+}
+
+
+.modal__right--para{
+
+  width:155px;
+  border-left: 2px solid var(--blue);
+  padding: 10px;
+}
+
+
+.modal__right--div{
+  background: var(--white);
+  border: 1px solid #F7F8FC;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 20px 13px;
+  width: 350px;
+}
+
+.modal__right--deposite{
+  background: #F7F8FC;
+  border-radius: 6px;
+  display: inline;
+  padding: 5px 20px;
+  font-weight: 600;
+}
+
+
+
+.avatar {
+  background-color: #a0ecd0;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
 }
