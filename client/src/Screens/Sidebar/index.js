@@ -12,7 +12,7 @@ const index = () => {
           />{" "}
           Dashboard
         </div>
-            <div className={styles.menu}>
+            <div className={`${styles.menu} ${styles.active}`}>
           <img
             src={`${process.env.PUBLIC_URL}/icons/Sidebar/recycle-trash.svg`}
             alt="Side_icon"

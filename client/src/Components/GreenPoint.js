@@ -1,8 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
+import Map from "./Map";
 import Cards from './Cards'
 
 const GreenPoint = () => {
+
+  const [coords, setCoords] = useState(null);
+  const [autocomplete, setAutocomplete] = useState(null);
+  const [childClicked, setChildClicked] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(coords)
+
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+      setCoords({ lat: latitude, lng: longitude });
+    });
+  }, []);
+
+
+  const onLoad = (autoC) => setAutocomplete(autoC);
+
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+
+    setCoords({ lat, lng });
+  };
+
+
   return (
     <div className="container">
     <div className="d-flex">
@@ -73,7 +100,13 @@ const GreenPoint = () => {
 
       </div>
 
-      <div className="mapContainer">Map here</div>
+
+{/* MAP HERE */}
+      <Map
+         setChildClicked={setChildClicked}
+         setCoords={setCoords}
+         coords={coords}
+         />
     </div>
     </div>
   );

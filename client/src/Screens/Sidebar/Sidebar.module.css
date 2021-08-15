@@ -12,7 +12,9 @@
     padding: 18px 20px;
 }
 
-.menu:hover{
+
+
+.active , .menu:hover{
     background: #F7F8FC;
     border-radius: 0px 8px 8px 0px;
     border-left: 4px #448E9D solid;
