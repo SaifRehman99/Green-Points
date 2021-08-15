@@ -20,10 +20,14 @@ const GreenPoint = ({ coords, setCoords }) => {
     setFilteredPoints(allGreenPoints.filter(({ name }) => search.test(name)));
   };
 
+
+
   useEffect(() => {
     !pointName && setFilteredPoints([]);
   }, [pointName]);
 
+
+  
   useEffect(() => {
     const getPoints = async () => {
       setIsLoading(true);
@@ -112,6 +116,7 @@ const GreenPoint = ({ coords, setCoords }) => {
                     <Cards
                       index={index + 1}
                       key={point._id}
+                      _id={point._id}
                       name={point.name}
                       address={point.address}
                       timestamp={point.createdAt}
@@ -121,6 +126,7 @@ const GreenPoint = ({ coords, setCoords }) => {
                     <Cards
                       index={allGreenPoints.length - index}
                       key={point._id}
+                      _id={point._id}
                       name={point.name}
                       address={point.address}
                       timestamp={point.createdAt}
@@ -144,7 +150,7 @@ const GreenPoint = ({ coords, setCoords }) => {
         <Map
           setCoords={setCoords}
           coords={coords}
-          allGreenPoints={allGreenPoints}
+          allGreenPoints={filteredPoints?.length ? filteredPoints : allGreenPoints}
         />
       </div>
     </div>

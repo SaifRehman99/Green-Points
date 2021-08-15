@@ -1,9 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const UserActivity = require("../models/userActivityModel");
 
-
-
-// @desc    Fetch User Activites [ Selected Green Point ]
+// @desc    Fetch User Activites [ All ]
 // @route   GET /api/getUserActivities
 // @access  Public
 const getUserActivities = asyncHandler(async (req, res) => {
@@ -14,8 +12,18 @@ const getUserActivities = asyncHandler(async (req, res) => {
   });
 });
 
+// @desc    Fetch User Activites [ Selected Green Point ]
+// @route   GET /api/getUserActivities
+// @access  Public
+const getUserActivity = asyncHandler(async (req, res) => {
+  const userActivity = await UserActivity.find({
+    greenPointID: req.params.id,
+  }).lean();
 
-
+  res.status(200).json({
+    userActivity,
+  });
+});
 
 // @desc    Add Green Point [ Selected Green Point ]
 // @route   POST /api/addUserActivity
@@ -24,7 +32,9 @@ const addUserActivity = asyncHandler(async (req, res) => {
   const { greenPointID, user_name, activity_data } = req.body;
 
   const userActivity = await UserActivity({
-    greenPointID, user_name, activity_data
+    greenPointID,
+    user_name,
+    activity_data,
   });
 
   const createdUserActivity = await userActivity.save();
@@ -35,6 +45,7 @@ const addUserActivity = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-    getUserActivities,
-    addUserActivity
+  getUserActivity,
+  getUserActivities,
+  addUserActivity,
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ModalCard from "./ModalCard";
 import {
   Modal,
@@ -9,17 +9,30 @@ import {
   ModalCloseButton,
   Button,
 } from "@chakra-ui/react";
-import Moment from 'react-moment';
-
-
+import Moment from "react-moment";
+import axios from "axios";
 
 const SinglePoint = ({ currentData, setCurrentData }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [userActivity, setUserActivity] = useState([]);
 
   const onClose = () => {
     setIsOpen(false);
     setCurrentData([]);
   };
+
+  useEffect(() => {
+    const getUserActivity = async () => {
+      const {
+        data: { userActivity },
+      } = await axios.get(
+        `${process.env.REACT_APP_SERVER_URL}/api/getUserActivities/${currentData[0]._id}`
+      );
+      setUserActivity(userActivity);
+    };
+
+    getUserActivity();
+  }, [currentData]);
 
   return (
     <>
@@ -44,7 +57,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                         alt="Modal_Icon"
                       />
                       <p className="m-22">
-                      Next Clean Up: &nbsp;&nbsp;
+                        Next Clean Up: &nbsp;&nbsp;
                         <Moment format="MMMM DD -  hh:mm">
                           {currentData[0].timestamp}
                         </Moment>
@@ -192,11 +205,11 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
             <div className="modal__right">
               <h3 className="font-w6">Activity:</h3>
 
-             <ModalCard />
-             <ModalCard />
-             <ModalCard />
-             
-
+              {userActivity?.length
+                ? userActivity.map((userAct, index) => (
+                    <ModalCard key={index} userActivity={userAct} />
+                  ))
+                : null}
             </div>
           </div>
         </ModalContent>

@@ -1,3 +1,4 @@
+/*  ================================ ROOT STYLES HERE ================================ */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;600;800&display=swap");
 
 :root {
@@ -177,7 +178,9 @@ html {
 
 /* ======================================================================================================================================================================== */
 
-/* GREEN POINT COMPONENTS STYLES HERE */
+
+
+/*  ================================ GREEN POINT COMPONENTS STYLES HERE ================================ */
 .greenPoint {
   display: flex;
   justify-content: space-between;
@@ -256,7 +259,9 @@ html {
   box-shadow: none;
 }
 
-/* GREEN POINT CARD */
+
+
+/* ================================ GREEN POINT CARD STYLES HERE ================================ */
 
 .card_Layout {
   background: #ffffff;
@@ -292,7 +297,9 @@ select.chakra-select.css-173b75c {
   height: 55px;
 }
 
-/* SELECT CONTAINER */
+
+
+/* ================================ ADD GREEN POINT CONTAINER STYLES HERE ================================ */
 
 .select__container {
   display: flex;
@@ -332,7 +339,10 @@ button.chakra-button.css-f6n2t5:hover {
   font-size: 17px;
 }
 
-/* MODAL CONTAINER */
+
+
+
+/* ================================ MODAL CONTAINER FOR SINGLE POINT HERE ================================ */
 
 .chakra-modal--header {
   padding-bottom: 5px !important;
@@ -361,7 +371,7 @@ button.chakra-modal__close-btn.css-b6acrs {
 }
 
 .modal__left {
-  width: 40vw;
+  width: 600px;
   margin-right: 10px;
 }
 
@@ -370,7 +380,6 @@ button.chakra-modal__close-btn.css-b6acrs {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 570px;
-  padding:10px;
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
 }
@@ -452,13 +461,19 @@ button.chakra-modal__close-btn.css-b6acrs {
   width: 25px;
 }
 
-/* MAP STYLES HERE */
+
+
+
+/* ================================================================ MAP STYLES HERE ================================================================ */
 .mapContainer {
   height: "85vh";
   width: "100%";
 }
 
-/* SPINNER */
+
+
+
+/*   ================================================================ CUSTOM SPINNER STYLES HERE  ================================ */
 .spinner {
   position: relative;
   left: 50%;

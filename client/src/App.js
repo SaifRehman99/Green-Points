@@ -6,6 +6,8 @@ import GreenPoint from "./Components/GreenPoint";
 import AddGreenPoint from "./Components/AddGreenPoint";
 
 function App() {
+
+  
   const [coords, setCoords] = useState(null);
   const [autocomplete, setAutocomplete] = useState(null);
  
@@ -18,6 +20,8 @@ function App() {
     setCoords({ lat, lng });
   };
 
+
+  //  getting the users live location here
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
