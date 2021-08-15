@@ -5,7 +5,7 @@ import { Spinner } from "@chakra-ui/react";
 import Map from "./Map/index";
 import Cards from "./Cards";
 
-const GreenPoint = ({ coords, setCoords, setChildClicked }) => {
+const GreenPoint = ({ coords, setCoords }) => {
   
   const [allGreenPoints, setAllGreenPoints] = useState([]);
   const [filteredPoints, setFilteredPoints] = useState([]);
@@ -142,9 +142,9 @@ const GreenPoint = ({ coords, setCoords, setChildClicked }) => {
 
         {/* MAP HERE */}
         <Map
-          setChildClicked={setChildClicked}
           setCoords={setCoords}
           coords={coords}
+          allGreenPoints={allGreenPoints}
         />
       </div>
     </div>

@@ -20,7 +20,7 @@ const ModalCard = ({data}) => {
             <p>
               {" "}
               <img
-                src={`${process.env.PUBLIC_URL}/icons/Avatar.svg`}
+                src={`${process.env.PUBLIC_URL}/icons/Header/Avatar.svg`}
                 alt="Avatar"
                 className="avatar"
               />{" "}

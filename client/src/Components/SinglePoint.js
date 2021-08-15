@@ -40,7 +40,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                   <div className="d-flex mt-10 modal--info">
                     <div className="d-flex">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/bx-time.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/bx-time.svg`}
                         alt="Modal_Icon"
                       />
                       <p className="m-22">
@@ -58,7 +58,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                   <div>
                     <img
                       className="mt-25"
-                      src={`${process.env.PUBLIC_URL}/icons/Map__modal.svg`}
+                      src={`${process.env.PUBLIC_URL}/icons/SingleCard/Map__modal.svg`}
                       alt="MODAL_MAP"
                     />
                   </div>
@@ -68,42 +68,42 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                   <div className="d-flex mt-25">
                     <div className="modal__icon m-xy">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/paper.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/paper.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
 
                     <div className="modal__icon-1 m-xy">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/organic.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/organic.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
 
                     <div className="modal__icon m-xy">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/glass.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/glass.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
 
                     <div className="modal__icon m-xy">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/plastic.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/plastic.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
 
                     <div className="modal__icon-2 m-xy">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/e-waste.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/e-waste.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
 
                     <div className="modal__icon m-xy ml-40">
                       <img
-                        src={`${process.env.PUBLIC_URL}/icons/metal.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/metal.svg`}
                         alt="Modal_Icon"
                       />
                     </div>
@@ -166,7 +166,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                     <div className="d-flex cursor-p">
                       <img
                         className="mr-10"
-                        src={`${process.env.PUBLIC_URL}/icons/bx-stats.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/bx-stats.svg`}
                         alt="Modal_Icon"
                       />
                       <p className="green f-12">
@@ -177,7 +177,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                     <div className="d-flex m-25 cursor-p">
                       <img
                         className="mr-10"
-                        src={`${process.env.PUBLIC_URL}/icons/bx-error.svg`}
+                        src={`${process.env.PUBLIC_URL}/icons/SingleCard/bx-error.svg`}
                         alt="Modal_Icon"
                       />
                       <p className="red f-12 ">Problem? Report here.</p>

@@ -8,8 +8,6 @@ import AddGreenPoint from "./Components/AddGreenPoint";
 function App() {
   const [coords, setCoords] = useState(null);
   const [autocomplete, setAutocomplete] = useState(null);
-
-  const [childClicked, setChildClicked] = useState(null);
  
   const onLoad = (autoC) => setAutocomplete(autoC);
 
@@ -45,7 +43,6 @@ function App() {
               <GreenPoint
                 setCoords={setCoords}
                 coords={coords}
-                setChildClicked={setChildClicked}
               />
             )}
           />
@@ -58,7 +55,6 @@ function App() {
                 onPlaceChanged={onPlaceChanged}
                 setCoords={setCoords}
                 coords={coords}
-                setChildClicked={setChildClicked}
               />
             )}
           />

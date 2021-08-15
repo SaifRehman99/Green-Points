@@ -7,7 +7,7 @@ const Header = () => {
       <div className={styles.leftHeader}>
         <div className={styles.flexChild}>
           <img
-            src={`${process.env.PUBLIC_URL}/icons/Group_1.svg`}
+            src={`${process.env.PUBLIC_URL}/icons/Header/Group_1.svg`}
             alt="Header Logo"
             className={styles.logo}
           />
@@ -31,13 +31,13 @@ const Header = () => {
         </div>
 
         <img
-          src={`${process.env.PUBLIC_URL}/icons/bx-chevron-down.svg`}
+          src={`${process.env.PUBLIC_URL}/icons/Header/bx-chevron-down.svg`}
           alt="Dropdown"
           style={{ marginRight: "10px" }}
         />
 
         <img
-          src={`${process.env.PUBLIC_URL}/icons/Avatar.svg`}
+          src={`${process.env.PUBLIC_URL}/icons/Header/Avatar.svg`}
           alt="Avatar"
           className={styles.avatar}
         />

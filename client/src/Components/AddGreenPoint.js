@@ -1,47 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Autocomplete } from "@react-google-maps/api";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import Map from "./Map/index";
 import InputSelect from "./InputSelect";
+import AlertMessage from "./Alert";
 import { Button } from "@chakra-ui/react";
-// import {BeatLoader} from '@chakra-ui/icons'
 
-const AddGreenPoint = ({
-  onLoad,
-  onPlaceChanged,
-  coords,
-  setCoords,
-  setChildClicked
-}) => {
-
+const AddGreenPoint = ({ onLoad, onPlaceChanged, coords, setCoords }) => {
   let history = useHistory();
 
-  
+  // While autocomplete search, onChange doesnt trigger and return incomplete text
+  //  that's why using ref here to target that node and fetch value
+  let addressEl = useRef(null);
+
+  const [error, setError] = useState(false);
   const [name, setName] = useState("");
-  const [address, setAddress] = useState({});
   const [success, setSuccess] = useState(false);
   const [formValues, setFormValues] = useState([{ name: "", weight: 0 }]);
 
   const handleSubmit = async () => {
-    setSuccess(true);
+    const containers = formValues.map((obj) => obj.name);
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    // Below is the logic checking for duplicates.
+    const set = new Set(containers);
+    const hasDuplicates = set.size < formValues.length;
 
-    await axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/api/addPoint`,
-      { name, address: { text:address, coords }, containers: formValues },
-      config
-    );
+    if (formValues[0].name && formValues[0].weight && !hasDuplicates) {
+      setSuccess(true);
 
-    setSuccess(false);
-    history.push("/");
+      const config = { headers: { "Content-Type": "application/json" } };
+
+      await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/addPoint`,
+        {
+          name,
+          address: { text: addressEl.current.value, coords },
+          containers: formValues,
+        },
+        config
+      );
+
+      setSuccess(false);
+      history.push("/");
+    } else {
+      // WE CAN SEND ALERT HERE
+      setError(true);
+    }
   };
+
+
+  
+  useEffect(() => {
+
+    let timer = setTimeout(() => {
+      setError(false);
+    }, 3500);
+
+    // this will clear Timeout
+    // when component unmount like in willComponentUnmount
+    // and error will not change to true
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [error]);
+
+
 
   return (
     <div className="container">
       <div className="d-flex">
         <div className="greenPointContainer">
+          {error && <AlertMessage message="Missing or Invalid Input!" />}
           {/* HEADER PART HERE */}
           <div className="d-flex" style={{ alignItems: "center" }}>
             <Link to="/">
@@ -98,9 +128,7 @@ const AddGreenPoint = ({
                         placeholder="New Point"
                         name="Address"
                         id="Address"
-                        onChange={(e) =>
-                          setAddress( e.target.value)
-                        }
+                        ref={addressEl}
                       />
                       <label htmlFor="Address" className="form__label ml-40">
                         Enter Point Address....
@@ -142,11 +170,7 @@ const AddGreenPoint = ({
         </div>
 
         {/* MAP HERE */}
-        <Map
-          setChildClicked={setChildClicked}
-          setCoords={setCoords}
-          coords={coords}
-        />
+        <Map setCoords={setCoords} coords={coords} />
       </div>
     </div>
   );
