@@ -3,14 +3,14 @@
 :root {
   --primary: #11998e;
   --secondary: #38ef7d;
-  --white: #FFFFFF;
+  --white: #ffffff;
   --gray: #9b9b9b;
   --green: #448e9d;
-  --oceanGreen:#00C48C;
-  --red: #FF647C;
-  --grey: #EAEFF5;
-  --yellow: #FAC546;
-  --blue: #73E7ED;
+  --oceanGreen: #00c48c;
+  --red: #ff647c;
+  --grey: #eaeff5;
+  --yellow: #fac546;
+  --blue: #73e7ed;
 }
 
 * {
@@ -20,29 +20,32 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
 
 /* ========================================== UTILITY CLASSES HERE ========================================== */
 .d-flex {
   display: flex;
 }
 
-.d-flex__row{
+.d-flex__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.d-flex__column{
+.d-flex__column {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.m-xy1{
-  margin:9px 0px;
+.m-xy1 {
+  margin: 9px 0px;
 }
-.m-xy{
+.m-xy {
   margin: 0px 20px;
 }
 
@@ -54,7 +57,7 @@
   margin-left: 25px;
 }
 
-.mb-10{
+.mb-10 {
   margin-bottom: 7px;
 }
 
@@ -66,9 +69,8 @@
   margin-right: 15px;
 }
 
-.ml-86{
+.ml-86 {
   margin-left: 76px;
-
 }
 
 .mr-20 {
@@ -82,25 +84,21 @@
 .green {
   color: var(--green);
 }
-.red{
+.red {
   color: var(--red);
-
 }
 
-.yellow{
+.yellow {
   color: var(--red);
-
 }
 
 .mt-2 {
   margin-top: 20px;
 }
 
-
 .mt-10 {
   margin-top: 10px;
 }
-
 
 .mt-25 {
   margin-top: 25px;
@@ -114,12 +112,12 @@
   margin-top: 35px;
 }
 
-.m-22{
+.m-22 {
   margin: 0px 22px;
 }
 
-.m-25{
-margin: 20px 0px;
+.m-25 {
+  margin: 20px 0px;
 }
 
 .h-4 {
@@ -152,17 +150,16 @@ margin: 20px 0px;
   font-size: 14px;
 }
 
-
 .f-15 {
   font-size: 15px;
 }
 
-.cursor-p{
+.cursor-p {
   cursor: pointer;
 }
 
 .sidebar {
-  width: 15vw;
+  width: 300px;
 }
 
 .greenPointContainer {
@@ -194,9 +191,14 @@ margin: 20px 0px;
 
 .greenPointButton {
   background: var(--oceanGreen);
-  padding: 20px 26px;
+  padding: 15px 20px;
   border-radius: 13px;
   color: white;
+}
+
+.greenPointButton:hover{
+  background: #0c976f;
+
 }
 
 /* SEARCH AND INPUT */
@@ -214,7 +216,6 @@ margin: 20px 0px;
   border-bottom: 1px solid var(--gray);
   outline: 0;
   font-size: 1.3rem;
-  color: var(--gray) !important;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -269,7 +270,7 @@ margin: 20px 0px;
   height: 155px;
   background: url("https://svgshare.com/i/_BY.svg") no-repeat center center /
     cover;
-  width: 300px;
+  width: 250px;
 }
 
 .card__Text {
@@ -291,16 +292,13 @@ select.chakra-select.css-173b75c {
   height: 55px;
 }
 
-
-
 /* SELECT CONTAINER */
 
-.select__container{
+.select__container {
   display: flex;
   align-items: center;
   width: 100%;
 }
-
 
 .chakra-select__wrapper.css-42b2qy {
   width: 80vw;
@@ -311,7 +309,6 @@ select.chakra-select.css-173b75c {
   width: 18vw;
   margin-left: 15px;
 }
-
 
 input#amount {
   height: 55px;
@@ -324,61 +321,56 @@ button.chakra-button.css-f6n2t5 {
   border-radius: 6px;
 }
 
-button.chakra-button.css-f6n2t5:hover{
-  background: #0c976f
+button.chakra-button.css-f6n2t5:hover {
+  background: #0c976f;
 }
 
-
-
-.greenpoint__add{
+.greenpoint__add {
   color: var(--green);
   float: right;
   padding: 17px 0px;
   font-size: 17px;
 }
 
-
 /* MODAL CONTAINER */
 
-.chakra-modal--header{
+.chakra-modal--header {
   padding-bottom: 5px !important;
-
 }
 
 .chakra-modal--header::before {
-  content:url('https://svgshare.com/i/_CJ.svg');
+  content: url("https://svgshare.com/i/_CJ.svg");
   background: var(--oceanGreen);
   border-radius: 16px;
   padding: 10px;
-  position:relative; 
-  z-index:100000; 
-  left:-10px;
-  top:13px;
+  position: relative;
+  z-index: 100000;
+  left: -10px;
+  top: 13px;
   margin-right: 10px;
 }
-
 
 button.chakra-modal__close-btn.css-b6acrs {
   margin-top: 6px;
 }
 
-.modal--info{
-  border: 1px #EAEFF5 solid;
+.modal--info {
+  border: 1px #eaeff5 solid;
   padding: 8.5px;
-  width: 31vw;
+  width: 410px;
 }
 
-.modal__left{
-width: 40vw;
-margin-right: 10px;
+.modal__left {
+  width: 40vw;
+  margin-right: 10px;
 }
 
-
-.modal__right{
-  margin: 18px 0px 0px 10px;  
+.modal__right {
+  margin: 18px 12px 0px 10px;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 570px;
+  padding:10px;
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
 }
@@ -387,34 +379,28 @@ margin-right: 10px;
   display: none;
 }
 
-
-
-.modal__icon{
+.modal__icon {
   border: 1px var(--red) solid;
   border-radius: 100%;
   padding: 10px;
 }
 
-.modal__icon-1{
-
+.modal__icon-1 {
   border: 1px var(--yellow) solid;
   border-left: 1px var(--grey) solid;
   border-bottom: 1px var(--grey) solid;
   border-top: 1px var(--grey) solid;
   border-radius: 100%;
   padding: 10px;
-
 }
 
-.modal__icon-2{
-
+.modal__icon-2 {
   border: 1px var(--oceanGreen) solid;
   border-left: 1px var(--grey) solid;
   border-bottom: 1px var(--grey) solid;
   /* border-top: 1px var(--grey) solid; */
   border-radius: 100%;
   padding: 10px;
-
 }
 
 .modal__icon > img {
@@ -423,32 +409,27 @@ margin-right: 10px;
   max-width: 100px;
 }
 
-
-.modal__icon-1 > img{
-  height: 25px;
-  width: 25px;
-  max-width: 100px;
-
-}
-
-.modal__icon-2 > img{
+.modal__icon-1 > img {
   height: 25px;
   width: 25px;
   max-width: 100px;
 }
 
+.modal__icon-2 > img {
+  height: 25px;
+  width: 25px;
+  max-width: 100px;
+}
 
-.modal__right--para{
-
-  width:155px;
+.modal__right--para {
+  width: 155px;
   border-left: 2px solid var(--blue);
   padding: 10px;
 }
 
-
-.modal__right--div{
+.modal__right--div {
   background: var(--white);
-  border: 1px solid #F7F8FC;
+  border: 1px solid #f7f8fc;
   box-sizing: border-box;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.04);
   border-radius: 8px;
@@ -456,19 +437,31 @@ margin-right: 10px;
   width: 350px;
 }
 
-.modal__right--deposite{
-  background: #F7F8FC;
+.modal__right--deposite {
+  background: #f7f8fc;
   border-radius: 6px;
   display: inline;
   padding: 5px 20px;
   font-weight: 600;
 }
 
-
-
 .avatar {
   background-color: #a0ecd0;
   border-radius: 100%;
   height: 25px;
   width: 25px;
+}
+
+/* MAP STYLES HERE */
+.mapContainer {
+  height: "85vh";
+  width: "100%";
+}
+
+/* SPINNER */
+.spinner {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
 }

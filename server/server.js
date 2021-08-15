@@ -5,7 +5,7 @@ require('dotenv').config()
 const express = require('express');
 const app = express()
 const connectDB = require('./config/db')
-
+const cors = require('cors')
 
 // Importing Router Here
 const greenPointRoutes = require('./routes/greenPointRoutes');
@@ -17,6 +17,7 @@ const userActivityRoutes = require('./routes/userActivityRoutes');
 const PORT = process.env.PORT || 9000;
 
 
+app.use(cors())
 app.use(express.json())
 
 

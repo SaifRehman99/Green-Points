@@ -1,15 +1,14 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import mapStyles from "./mapStyles";
-import classes from "./styles.css";
 
 const Map = ({ coords, setCoords, setChildClicked }) => {
 
 
   return (
-    <div style={{ height: "90vh", width: "60vw" }}>
+    <div style={{ height: "90vh", width: "50vw" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDC1TAR4ombz65moEQCbzNLowlI-PFHme0" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API }}
         defaultCenter={coords}
         center={coords}
         defaultZoom={14}
@@ -20,13 +19,14 @@ const Map = ({ coords, setCoords, setChildClicked }) => {
           styles: mapStyles,
         }}
         onChange={(e) => {
+          console.log(e)
           setCoords({ lat: e.center.lat, lng: e.center.lng });
         }}
         onChildClick={(child) => setChildClicked(child)}
       >
           {coords && 
         <div
-          className={classes.markerContainer}
+          className="markerContainer"
           lat={Number(coords?.lat)}
           lng={Number(coords?.lng)}
           // key={i}

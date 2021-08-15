@@ -9,11 +9,12 @@ import {
 
 
 
-const InputContainer = () => {
+const InputContainer = ({setWeight}) => {
+
   return (
     <FormControl id="amount">
     <NumberInput max={100} min={0} >
-      <NumberInputField  placeholder="100 KG" />
+      <NumberInputField  placeholder="100 KG" onChange={e => setWeight(e.target.value)} />
       <NumberInputStepper>
         <NumberIncrementStepper />
         <NumberDecrementStepper />

@@ -5,11 +5,13 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
 } from "@chakra-ui/react";
+import Moment from 'react-moment';
+
+
 
 const SinglePoint = ({ currentData, setCurrentData }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,7 +23,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
 
   return (
     <>
-      <Modal onClose={onClose} isOpen={isOpen} size={"5xl"} isCentered>
+      <Modal onClose={onClose} isOpen={isOpen} size={"6xl"} isCentered>
         <ModalOverlay />
         <ModalContent>
           <div className="d-flex">
@@ -42,7 +44,10 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                         alt="Modal_Icon"
                       />
                       <p className="m-22">
-                        Next Clean Up: August 24th - 22:30h
+                      Next Clean Up: &nbsp;&nbsp;
+                        <Moment format="MMMM DD -  hh:mm">
+                          {currentData[0].timestamp}
+                        </Moment>
                       </p>
                     </div>
 
@@ -158,7 +163,7 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                       alignItems: "center",
                     }}
                   >
-                    <div className="d-flex">
+                    <div className="d-flex cursor-p">
                       <img
                         className="mr-10"
                         src={`${process.env.PUBLIC_URL}/icons/bx-stats.svg`}
@@ -169,13 +174,13 @@ const SinglePoint = ({ currentData, setCurrentData }) => {
                       </p>
                     </div>
 
-                    <div className="d-flex m-25">
+                    <div className="d-flex m-25 cursor-p">
                       <img
                         className="mr-10"
                         src={`${process.env.PUBLIC_URL}/icons/bx-error.svg`}
                         alt="Modal_Icon"
                       />
-                      <p className="red f-12">Problem? Report here.</p>
+                      <p className="red f-12 ">Problem? Report here.</p>
                     </div>
                   </div>
                 </div>
