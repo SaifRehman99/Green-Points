@@ -6,6 +6,12 @@ On the client side, we are using ReactJS
 On the server side, we are using NodeJs, ExpressJs, MongoDB
 
 
+<img src="https://i.ibb.co/v188Ppv/Seedlabs-Trail-1.png" /> <br/>
+<img src="https://i.ibb.co/GVNQFnd/Seedlabs-Trail-2.png" /> <br/>
+<img src="https://i.ibb.co/TBFN0cM/Seedlabs-Trail-3.png" /> <br/>
+<img src="https://i.ibb.co/5h5Z09g/Seedlabs-Trail-4.png" /> <br/>
+
+
 
 # DEPLOY PROCESS
 
