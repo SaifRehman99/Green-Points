@@ -19,11 +19,11 @@ On the server side, we are using NodeJs, ExpressJs, MongoDB
   
   
       `cd server/` \
-      `heroku git:clone -a YOUR_INSTANCE_NAME_HERE` \ 
+      `heroku git:clone -a YOUR_INSTANCE_NAME_HERE`   <br/> 
       `git init` \
       `git add .` \
       `git commit -m "server upload"`  \
-      `git push heroku master`  \
+      `git push heroku master` 
       
   4. Now clone the client side and update the **SERVER_URL** from localhost to deployed heroku link.
   5. **BOOM!!** Your server side has been deployed successfully.
