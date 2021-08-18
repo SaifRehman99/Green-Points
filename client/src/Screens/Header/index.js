@@ -11,7 +11,7 @@ const Header = () => {
             alt="Header Logo"
             className={styles.logo}
           />
-          <h5 className={styles.logoHeading}>calypso :))))</h5>
+          <h5 className={styles.logoHeading}>calypso</h5>
         </div>
 
         <div className={styles.flexChild}>
