@@ -39,7 +39,7 @@ On the server side, we are using NodeJs, ExpressJs, MongoDB
 ## CLIENT
 
   1. Go the .env.example file and change it to .env and add your **GOOGLE_MAP_API_KEY**
-  2. No on the terminal, run `cd server/ && npm run build`
+  2. No on the terminal, run `cd client && npm run build`
   3. Head over to Netlify.com and Drag your **build** folder in order to deploy.
   4. Move to Site Settings and update the **Environment Variables** 
   5. **BOOM!!** Your client side has been deployed successfully
